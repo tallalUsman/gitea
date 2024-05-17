@@ -864,6 +864,7 @@ deps-tools:
 	$(GO) install $(GO_LICENSES_PACKAGE)
 	$(GO) install $(GOVULNCHECK_PACKAGE)
 	$(GO) install $(ACTIONLINT_PACKAGE)
+	which pandoc || (echo "Installing Pandoc on macOS..." && brew install pandoc); \
 
 node_modules: package-lock.json
 	npm install --no-save
